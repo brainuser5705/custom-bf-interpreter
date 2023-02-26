@@ -29,7 +29,7 @@ function SymbolField(props){
                 title={symbolDescriptions[symbolName]}
             >{symbolName}</div>
             <textarea
-                value={symbols[symbolName]} 
+                defaultValue={symbols[symbolName]} 
                 rows={1}
                 columns={40}
                 onChange={e => {

@@ -1,14 +1,26 @@
 import { PeekableStream } from './stream';
 
+function scan(symbols, first_char, stream){
+    let ret = first_char
+    let next_char = stream.pointer
+
+    while (next_char !== null && !Object.values(symbols).includes(ret)){
+        ret += stream.dispense_char()
+        next_char = stream.pointer
+    }
+
+    return ret
+}
+
 // function* defines a generator
 function* lex (symbols, charSequence) {
 
     let stream = new PeekableStream(charSequence); // doesn't work for default?
 
-    while (stream.pointer != null){
-        let c = stream.dispense_char();
+    while (stream.pointer !== null){
+        let symbol = scan(symbols, stream.dispense_char(), stream);
 
-        switch(c){
+        switch(symbol){
             case symbols["shift_right"]:
                 yield "shift_right";
                 break;

@@ -1,6 +1,6 @@
 {
   "name": "app",
-  "homepage": "http://ashleyliew.com/custom-brainfuck-interpreter",
+  "homepage": "http://ashleyliew.com/custom-brainfuck-interpreter/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

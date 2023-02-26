@@ -1,7 +1,7 @@
 import { PeekableStream } from './stream';
 
 // function* defines a generator
-function* lex (charSequence) {
+function* lex (symbols, charSequence) {
 
     let stream = new PeekableStream(charSequence); // doesn't work for default?
 
@@ -10,28 +10,28 @@ function* lex (charSequence) {
         // console.log("Lexing " + c);
 
         switch(c){
-            case ">":
+            case symbols["shift_right"]:
                 yield "shift_right";
                 break;
-            case "<":
+            case symbols["shift_left"]:
                 yield "shift_left";
                 break;
-            case "+":
+            case symbols["increment"]:
                 yield "increment";
                 break;
-            case "-":
+            case symbols["decrement"]:
                 yield "decrement";
                 break;
-            case ".":
+            case symbols["output"]:
                 yield "output";
                 break;
-            case ",":
+            case symbols["input"]:
                 yield "input";
                 break;
-            case "[":
+            case symbols["start_while"]:
                 yield "start_while";
                 break;
-            case "]":
+            case symbols["end_while"]:
                 yield "end_while";
                 break;
             default:

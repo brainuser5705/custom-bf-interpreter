@@ -3,6 +3,7 @@ class Evaluator{
     constructor(){
         this.arr = new Array(3000).fill(0); // don't need to initialize with size
         this.index = 0;
+        this.output = "";
     }
 
     evalExp(exp){
@@ -26,7 +27,7 @@ class Evaluator{
                 this.arr[this.index] -= 1;
                 break;
             case "output":
-                console.log("output: " + String.fromCharCode(this.arr[this.index]));
+                this.output += String.fromCharCode(this.arr[this.index]);
                 break;
             case "input":
                 let entered = '';
@@ -58,6 +59,7 @@ function evaluate(tokens){
     let evaluator = new Evaluator();
     console.log("Created new evaluator")
     evaluator.evalIter(tokens);
+    return evaluator.output;
 }
 
 export {evaluate};

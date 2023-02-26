@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/custom-brainfukc-interpreter/static/css/main.e6c13ad2.css",
+    "main.js": "/custom-brainfukc-interpreter/static/js/main.27838222.js",
+    "static/js/787.c1112931.chunk.js": "/custom-brainfukc-interpreter/static/js/787.c1112931.chunk.js",
+    "index.html": "/custom-brainfukc-interpreter/index.html",
+    "main.e6c13ad2.css.map": "/custom-brainfukc-interpreter/static/css/main.e6c13ad2.css.map",
+    "main.27838222.js.map": "/custom-brainfukc-interpreter/static/js/main.27838222.js.map",
+    "787.c1112931.chunk.js.map": "/custom-brainfukc-interpreter/static/js/787.c1112931.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.27838222.js"
+  ]
+}

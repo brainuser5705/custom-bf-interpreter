@@ -4,7 +4,7 @@ import { lex } from './interpreter/lexer';
 import { parse } from './interpreter/parser';
 import { evaluate } from './interpreter/evaluator';
 import { SymbolField } from './components/SymbolField';
-
+import './App.css';
 const SymbolContext = React.createContext(null);
 
 function App() {
@@ -40,26 +40,45 @@ function App() {
   }
   
   return (
-      <div>
+      <div className="App">
 
-        <SymbolContext.Provider value={{symbols: symbols, setSymbols: setSymbols }}>
-          {Object.keys(symbols).map(key => (
-            <SymbolField symbolName={key} />
-          ))}
-        </SymbolContext.Provider>
+        <div id="heading-container">
+          <h1>Custom Brainf**k Interpreter</h1>
+          <h2>Create your own Brainf**k variant!</h2>
+        </div>
+        
 
-        <div>
-          <textarea value={code} onChange={e => setCode(e.target.value)}>
-          </textarea>
+        <div className="container-sm row align-items-start mx-auto">
 
-          <button onClick={() => runInterpreter()}>Run code</button>
+          <div id="symbol-container" className="col container-sm me-5">
+            <h3>Change the symbols!</h3>
+            <SymbolContext.Provider value={{symbols: symbols, setSymbols: setSymbols }}>
+              {Object.keys(symbols).map(key => (
+                <SymbolField symbolName={key} />
+              ))}
+            </SymbolContext.Provider>
+          </div>
+          
 
-          <div>
-            {output}
+          <div id="code-container" className="col container-sm ms-5">
+            <h3>Enter your code here: </h3>
+
+            <div id="code-container-input" className='mb-5'>
+              <textarea value={code} onChange={e => setCode(e.target.value)}></textarea>
+              <br />
+              <button onClick={() => runInterpreter()}>Run code</button>
+            </div>
+            
+            <div>
+              <h3>Output: </h3>
+              <div>
+                {output}
+              </div>
+            </div>
+
           </div>
 
         </div>
-
       </div>
       
   );

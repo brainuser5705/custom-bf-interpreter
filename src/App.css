@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,25 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+#root, .App{
+  font-family: 'Share Tech Mono', monospace;
+}
+
+#heading-container {
+  text-align: center;
+}
+
+.symbol-field {
+  overflow: hidden;
+}
+
+.symbol-field input {
+  float: right;
+  clear: both;
+}
+
+.container-sm{
+  max-width: fit-content;
 }

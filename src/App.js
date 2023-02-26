@@ -87,7 +87,10 @@ function App() {
         <div id="heading-container" className="m-5">
           <h1>Custom Brainf**k Interpreter</h1>
           <h2>Create your own Brainf**k variant!</h2>
+          <a href="https://esolangs.org/wiki/Brainfuck">what is brainf**k?</a>
+          <p><i>Beware: This interpreter has some bugs... (e.g. outputting input)</i></p>
         </div>
+        
         
 
         <div className="container-sm row align-items-start mx-auto">
@@ -137,7 +140,7 @@ function App() {
 
             </div>
             
-            <div>
+            <div id="output-container">
               <h3>Output: </h3>
               <div>
                 {output}

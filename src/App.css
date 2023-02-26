@@ -71,11 +71,16 @@ textarea{
   background-color: rgb(205, 138, 138);
 }
 
-.symbol-field-label{
-
+a{
+  color:rgb(98, 152, 199)
 }
 
 .symbol-field-label:hover{
   color: rgb(98, 152, 199);
   cursor: pointer;
+}
+
+#output-container{
+  border: 2px solid white;
+  padding: 1em;
 }

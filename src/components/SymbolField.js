@@ -28,12 +28,12 @@ function SymbolField(props){
                 data-bs-placement="right"
                 title={symbolDescriptions[symbolName]}
             >{symbolName}</div>
-            <input 
-                type="text"
+            <textarea
                 value={symbols[symbolName]} 
+                rows={1}
+                columns={40}
                 onChange={e => {
                     let newSymbol = e.target.value;
-
                     if (newSymbol === '' || (Object.values(symbols)).includes(newSymbol)) { // fix replacement bug
                         setInvalid(true);
                     }else{
@@ -43,9 +43,9 @@ function SymbolField(props){
                     }
 
                 }}
-                size="40"
                 className={`align-right ${invalid ? "invalid-symbol-field" : ""}`}
-            />
+                
+            ></textarea>
         </div>
     );
 }

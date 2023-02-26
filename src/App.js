@@ -79,7 +79,6 @@ function App() {
 
   function loadSampleVariant(variant){
     setSymbols(variant);
-    loadSampleCode(helloWorld);
   }
  
   return (

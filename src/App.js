@@ -4,6 +4,9 @@ import { lex } from './interpreter/lexer';
 import { parse } from './interpreter/parser';
 import { evaluate } from './interpreter/evaluator';
 import { SymbolField } from './components/SymbolField';
+import { helloWorld, cat, print0to99 } from './examples/code-examples';
+import { ook } from './examples/variant-examples';
+import { translateFromBf } from './examples/translator';
 import './App.css';
 const SymbolContext = React.createContext(null);
 
@@ -31,7 +34,7 @@ function App() {
     "end_while": "]"
   });
 
-  const [code, setCode] = useState("");
+  const [code, setCode] = useState(helloWorld);
   const [output, setOutput] = useState("Output will be here...");
 
   function runInterpreter() {
@@ -48,24 +51,32 @@ function App() {
     
       let output = evaluate(ast_tokens);
       setOutput(output);
+
   }
 
-  function updateCode(){       
-    console.log(symbols);
-    console.log(oldSymbols);
-    let temp = code;          
-    for (let symbolName of Object.keys(symbols)){
-      let newCode = temp.replaceAll(oldSymbols[symbolName], symbols[symbolName]);
-      temp = newCode; // can't put setCode() in loop for some reason?
-    }
-    setCode(temp);
-    setOutput("Output will be here...")
-    setOldSymbols(symbols);
+  // function updateCode(){       
 
-    console.log(symbols);
-    console.log(oldSymbols);
+  //   console.log(symbols);
+  //   console.log(oldSymbols);
+
+  //   let bfCode = translateToBf(code, oldSymbols);
+  //   console.log("bfCode: " + bfCode);
+
+  //   let newCode = translateFromBf(bfCode, symbols);
+  //   console.log("newCode: " + newCode)
+
+  //   setOutput("Output will be here...")
+  //   setOldSymbols(symbols);
+  //   setCode(newCode);
+
+  // }
+
+  function loadSampleCode(code){
+    let newCode = translateFromBf(code, symbols);
+    setOutput("Output will be here...");
+    setCode(newCode);
   }
-  
+ 
   return (
       <div className="App">
 
@@ -79,12 +90,31 @@ function App() {
 
           <div id="symbol-container" className="col container-sm me-5">
             <h3>Change the symbols!</h3>
-            <SymbolContext.Provider value={{symbols: symbols, setSymbols: setSymbols, oldSymbols: oldSymbols, setOldSymbols: setOldSymbols}}>
+            <SymbolContext.Provider value={{symbols: symbols, setSymbols: setSymbols}}>
               {Object.keys(symbols).map(key => (
                 <SymbolField symbolName={key} />
               ))}
             </SymbolContext.Provider>
-            <button onClick={() => updateCode()}>Update Code</button>
+            {/* <button onClick={() => updateCode()}>Update Code</button> */}
+            <div id="sample-container" className="mt-5 row">
+
+                <div className="column">
+                  <h5>Generate sample code in your variant!</h5>
+                  <ul>
+                    <li><button onClick={() => loadSampleCode(helloWorld)}>Hello, world!</button></li>
+                    <li><button onClick={() => loadSampleCode(cat)}>cat</button></li>
+                    <li><button onClick={() => loadSampleCode(print0to99)}>print 0 to 99</button></li>
+                  </ul>
+                </div>
+
+                <div className="column">
+                  <h5>Try out these variants!</h5>
+                  <ul>
+                    <li><button onClick={() => setSymbols(ook)}>Ook!</button></li>
+                  </ul>
+                </div>
+                
+              </div>
           </div>
           
 
@@ -100,6 +130,7 @@ function App() {
               ></textarea>
               <br />
               <button onClick={() => runInterpreter()}>Run code</button>
+
             </div>
             
             <div>

@@ -15,7 +15,7 @@ function SymbolField(props){
             <span className="symbol-field-label">{symbolName}</span>
             <input 
                 type="text"
-                defaultValue={symbols[symbolName]} 
+                value={symbols[symbolName]} 
                 onChange={e => {
                     let newSymbol = e.target.value;
 

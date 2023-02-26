@@ -7,7 +7,6 @@ class Parser {
     }
 
     next_expression(){
-        console.log("Tokens: " + this.tokens);
         let type = this.tokens.pointer;
         
         this.tokens.dispense_char();

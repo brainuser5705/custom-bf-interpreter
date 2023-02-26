@@ -7,7 +7,6 @@ function* lex (symbols, charSequence) {
 
     while (stream.pointer != null){
         let c = stream.dispense_char();
-        // console.log("Lexing " + c);
 
         switch(c){
             case symbols["shift_right"]:

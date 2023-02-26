@@ -57,7 +57,6 @@ class Evaluator{
 
 function evaluate(tokens){
     let evaluator = new Evaluator();
-    console.log("Created new evaluator")
     evaluator.evalIter(tokens);
     return evaluator.output;
 }

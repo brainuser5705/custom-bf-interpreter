@@ -76,6 +76,11 @@ function App() {
     setOutput("Output will be here...");
     setCode(newCode);
   }
+
+  function loadSampleVariant(variant){
+    setSymbols(variant);
+    loadSampleCode(helloWorld);
+  }
  
   return (
       <div className="App">
@@ -102,7 +107,6 @@ function App() {
                   <h5>Generate sample code in your variant!</h5>
                   <ul>
                     <li><button onClick={() => loadSampleCode(helloWorld)}>Hello, world!</button></li>
-                    <li><button onClick={() => loadSampleCode(cat)}>cat</button></li>
                     <li><button onClick={() => loadSampleCode(print0to99)}>print 0 to 99</button></li>
                   </ul>
                 </div>
@@ -110,8 +114,8 @@ function App() {
                 <div className="column">
                   <h5>Try out these variants!</h5>
                   <ul>
-                    <li><button onClick={() => setSymbols(brickf__k)}>Brickf__k</button></li>
-                    <li><button onClick={() => setSymbols(ook)}>Ook!</button></li>
+                    <li><button onClick={() => loadSampleVariant(brickf__k)}>Brickf__k</button></li>
+                    <li><button onClick={() => loadSampleVariant(ook)}>Ook!</button></li>
                   </ul>
                 </div>
                 
@@ -126,7 +130,7 @@ function App() {
               <textarea 
                 value={code}
                 onChange={e => setCode(e.target.value)}
-                rows={10}
+                rows={15}
                 placeholder={"Enter your code here..."}
               ></textarea>
               <br />

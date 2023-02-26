@@ -37,8 +37,11 @@
   }
 } */
 
-#root, .App{
+
+html, #root, .App{
   font-family: 'Share Tech Mono', monospace;
+  background-color: rgb(10, 10, 10);
+  color: white;
 }
 
 #heading-container {
@@ -65,5 +68,14 @@ textarea{
 }
 
 .invalid-symbol-field{
-  background-color: red;
+  background-color: rgb(205, 138, 138);
+}
+
+.symbol-field-label{
+
+}
+
+.symbol-field-label:hover{
+  color: rgb(98, 152, 199);
+  cursor: pointer;
 }

@@ -20,6 +20,17 @@ function App() {
     "end_while": "]"
   });
 
+  const [oldSymbols, setOldSymbols] = useState({
+    "shift_right": ">",
+    "shift_left": "<",
+    "increment": "+",
+    "decrement": "-",
+    "output": ".",
+    "input": ",",
+    "start_while": "[",
+    "end_while": "]"
+  });
+
   const [code, setCode] = useState("");
   const [output, setOutput] = useState("Output will be here...");
 
@@ -38,6 +49,22 @@ function App() {
       let output = evaluate(ast_tokens);
       setOutput(output);
   }
+
+  function updateCode(){       
+    console.log(symbols);
+    console.log(oldSymbols);
+    let temp = code;          
+    for (let symbolName of Object.keys(symbols)){
+      let newCode = temp.replaceAll(oldSymbols[symbolName], symbols[symbolName]);
+      temp = newCode; // can't put setCode() in loop for some reason?
+    }
+    setCode(temp);
+    setOutput("Output will be here...")
+    setOldSymbols(symbols);
+
+    console.log(symbols);
+    console.log(oldSymbols);
+  }
   
   return (
       <div className="App">
@@ -52,11 +79,12 @@ function App() {
 
           <div id="symbol-container" className="col container-sm me-5">
             <h3>Change the symbols!</h3>
-            <SymbolContext.Provider value={{symbols: symbols, setSymbols: setSymbols, code: code, setCode: setCode }}>
+            <SymbolContext.Provider value={{symbols: symbols, setSymbols: setSymbols, oldSymbols: oldSymbols, setOldSymbols: setOldSymbols}}>
               {Object.keys(symbols).map(key => (
                 <SymbolField symbolName={key} />
               ))}
             </SymbolContext.Provider>
+            <button onClick={() => updateCode()}>Update Code</button>
           </div>
           
 

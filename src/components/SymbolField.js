@@ -7,7 +7,7 @@ function SymbolField(props){
 
     const [invalid, setInvalid] = useState(false);
 
-    const {symbols, setSymbols, code, setCode } = useContext(SymbolContext);
+    const {symbols, setSymbols} = useContext(SymbolContext);
     const symbolName = props.symbolName;
 
     return (
@@ -23,10 +23,8 @@ function SymbolField(props){
                         setInvalid(true);
                     }else{
                         setInvalid(false);
-                        let oldSymbol = symbols[symbolName];
                         symbols[symbolName] = newSymbol;
                         setSymbols(symbols);
-                        setCode(code.replaceAll(oldSymbol, newSymbol));
                     }
 
                 }}

@@ -57,3 +57,11 @@
 .container-sm{
   max-width: fit-content;
 }
+
+textarea{
+  width: 90%;
+}
+
+.invalid-symbol-field{
+  background-color: red;
+}

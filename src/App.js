@@ -42,7 +42,7 @@ function App() {
   return (
       <div className="App">
 
-        <div id="heading-container">
+        <div id="heading-container" className="m-5">
           <h1>Custom Brainf**k Interpreter</h1>
           <h2>Create your own Brainf**k variant!</h2>
         </div>
@@ -52,7 +52,7 @@ function App() {
 
           <div id="symbol-container" className="col container-sm me-5">
             <h3>Change the symbols!</h3>
-            <SymbolContext.Provider value={{symbols: symbols, setSymbols: setSymbols }}>
+            <SymbolContext.Provider value={{symbols: symbols, setSymbols: setSymbols, code: code, setCode: setCode }}>
               {Object.keys(symbols).map(key => (
                 <SymbolField symbolName={key} />
               ))}
@@ -64,7 +64,12 @@ function App() {
             <h3>Enter your code here: </h3>
 
             <div id="code-container-input" className='mb-5'>
-              <textarea value={code} onChange={e => setCode(e.target.value)}></textarea>
+              <textarea 
+                value={code}
+                onChange={e => setCode(e.target.value)}
+                rows={10}
+                placeholder={"Enter your code here..."}
+              ></textarea>
               <br />
               <button onClick={() => runInterpreter()}>Run code</button>
             </div>

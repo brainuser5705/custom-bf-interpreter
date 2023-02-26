@@ -115,6 +115,7 @@ function App() {
 
                 <div className="column">
                   <h5>Try out these variants!</h5>
+                  <p>(Click on a sample program afterwards)</p>
                   <ul>
                     <li><button onClick={() => loadSampleVariant(brickf__k)}>Brickf__k</button></li>
                     <li><button onClick={() => loadSampleVariant(ook)}>Ook!</button></li>

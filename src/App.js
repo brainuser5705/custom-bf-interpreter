@@ -5,7 +5,7 @@ import { parse } from './interpreter/parser';
 import { evaluate } from './interpreter/evaluator';
 import { SymbolField } from './components/SymbolField';
 import { helloWorld, cat, print0to99 } from './examples/code-examples';
-import { ook } from './examples/variant-examples';
+import { ook, brickf__k } from './examples/variant-examples';
 import { translateFromBf } from './examples/translator';
 import './App.css';
 const SymbolContext = React.createContext(null);
@@ -88,7 +88,7 @@ function App() {
 
         <div className="container-sm row align-items-start mx-auto">
 
-          <div id="symbol-container" className="col container-sm me-5">
+          <div id="symbol-container" className="col container-sm">
             <h3>Change the symbols!</h3>
             <SymbolContext.Provider value={{symbols: symbols, setSymbols: setSymbols}}>
               {Object.keys(symbols).map(key => (
@@ -110,6 +110,7 @@ function App() {
                 <div className="column">
                   <h5>Try out these variants!</h5>
                   <ul>
+                    <li><button onClick={() => setSymbols(brickf__k)}>Brickf__k</button></li>
                     <li><button onClick={() => setSymbols(ook)}>Ook!</button></li>
                   </ul>
                 </div>

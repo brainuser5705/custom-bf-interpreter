@@ -9,4 +9,15 @@ const ook = {
     "end_while": "Ook? Ook!"
 };
 
-export {ook};
+const brickf__k = {
+    "shift_right": "brick",
+    "shift_left": "clay",
+    "increment": "mortar",
+    "decrement": "more brick",
+    "output": "i love bricks",
+    "input": "stack of bricks",
+    "start_while": "and more bricks",
+    "end_while": "for the love of bricks"
+}
+
+export {ook, brickf__k};

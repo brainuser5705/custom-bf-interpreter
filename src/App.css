@@ -47,15 +47,17 @@
 
 .symbol-field {
   overflow: hidden;
+  margin-bottom: 0.2em;
 }
 
-.symbol-field input {
+/* .symbol-field input {
   float: right;
   clear: both;
-}
+} */
 
 .container-sm{
-  max-width: fit-content;
+  /* max-width: fit-content; */
+  margin: auto inherit;
 }
 
 textarea{

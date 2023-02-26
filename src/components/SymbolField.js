@@ -12,7 +12,7 @@ function SymbolField(props){
 
     return (
         <div className="symbol-field">
-            <span className="symbol-field-label">{symbolName}</span>
+            <div className="symbol-field-label">{symbolName}</div>
             <input 
                 type="text"
                 value={symbols[symbolName]} 
@@ -28,7 +28,7 @@ function SymbolField(props){
                     }
 
                 }}
-                size="10"
+                size="50"
                 className={`align-right ${invalid ? "invalid-symbol-field" : ""}`}
             />
         </div>

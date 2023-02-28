@@ -89,6 +89,7 @@ function App() {
           <h2>Create your own Brainf**k variant!</h2>
           <a href="https://esolangs.org/wiki/Brainfuck">what is brainf**k?</a>
           <p><i>Beware: The UI has <s>some</s> a lot bugs... (e.g. outputting input)</i></p>
+          <h2>[UI is currently a work in progress, it kind of works but not really at the moment.]</h2>
         </div>
         
         

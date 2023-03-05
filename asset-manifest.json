@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/custom-brainfuck-interpreter/static/css/main.41e5018c.css",
-    "main.js": "/custom-brainfuck-interpreter/static/js/main.0e9d124c.js",
-    "static/js/787.c1112931.chunk.js": "/custom-brainfuck-interpreter/static/js/787.c1112931.chunk.js",
-    "index.html": "/custom-brainfuck-interpreter/index.html",
-    "main.41e5018c.css.map": "/custom-brainfuck-interpreter/static/css/main.41e5018c.css.map",
-    "main.0e9d124c.js.map": "/custom-brainfuck-interpreter/static/js/main.0e9d124c.js.map",
-    "787.c1112931.chunk.js.map": "/custom-brainfuck-interpreter/static/js/787.c1112931.chunk.js.map"
+    "main.css": "/custom-bf-interpreter/static/css/main.41e5018c.css",
+    "main.js": "/custom-bf-interpreter/static/js/main.5ece7f6e.js",
+    "static/js/787.c1112931.chunk.js": "/custom-bf-interpreter/static/js/787.c1112931.chunk.js",
+    "index.html": "/custom-bf-interpreter/index.html",
+    "main.41e5018c.css.map": "/custom-bf-interpreter/static/css/main.41e5018c.css.map",
+    "main.5ece7f6e.js.map": "/custom-bf-interpreter/static/js/main.5ece7f6e.js.map",
+    "787.c1112931.chunk.js.map": "/custom-bf-interpreter/static/js/787.c1112931.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.41e5018c.css",
-    "static/js/main.0e9d124c.js"
+    "static/js/main.5ece7f6e.js"
   ]
 }
